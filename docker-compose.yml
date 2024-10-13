@@ -37,11 +37,11 @@ services:
       KAFKA_SSL_KEY_CREDENTIALS: ssl.creds
       KAFKA_SSL_TRUSTSTORE_FILENAME: kafka.server.truststore.jks
       KAFKA_SSL_TRUSTSTORE_CREDENTIALS: ssl.creds
-      # KAFKA_SSL_CLIENT_AUTH: 'required'
-      KAFKA_SSL_CLIENT_AUTH: none
+      KAFKA_SSL_CLIENT_AUTH: 'required'
+      # KAFKA_SSL_CLIENT_AUTH: none
       KAFKA_SECURITY_PROTOCOL: SSL
       KAFKA_OFFSETS_TOPIC_REPLICATION_FACTOR: 1
       # KAFKA_SSL_ENDPOINT_IDENTIFICATION_ALGORITHM: ''
       
     volumes:
-      - ./certs:/etc/kafka/secrets
+      - .:/etc/kafka/secrets

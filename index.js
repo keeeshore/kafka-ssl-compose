@@ -24,19 +24,19 @@ const run = async () => {
     );
 
     // const { cert, key, ca } = keystore['caroot'];
-    const { cert, key } = keystore['mykey'];
-    const { ca } = keystore['CARoot'];
-    const { ca: ca1 } = keystore['CN=Kafka'];
+    const { cert, key } = keystore['localhost'];
+    const { ca } = keystore['caroot'];
+    // const { ca: ca1 } = keystore['CN=Kafka'];
 
     const kafka = new Kafka({
         clientId: 'kafka-ssl',
-        brokers: ['localhost:9093'],
-        ssl: {
-            rejectUnauthorized: false,
-            ca: [ca],
-            key: key,
-            cert: cert
-          },
+        brokers: ['localhost:9092'],
+        // ssl: {
+        //     rejectUnauthorized: false,
+        //     // ca: [ca],
+        //     // key: key,
+        //     cert: cert
+        //   },
         // ssl: {
         //     rejectUnauthorized: false,
         //     ca: [fs.readFileSync('./tmp/consumer-ca-signed.crt', 'utf-8')],
